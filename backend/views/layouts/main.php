@@ -73,25 +73,24 @@ AppAsset::register($this);
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-
                 <?php
-                    echo Nav::widget(
+                    echo \yii\widgets\Menu::widget(
                         [
                             'items' => [
                                 [
                                     'label' => 'Ссылка 1',
-                                    'url' => '#'
+                                    'url' => '#',
                                 ],
                                 [
                                     'label' => 'Ссылка 2',
                                     'url' => '#'
                                 ],
                                 [
-                                    'label' => '<i class="fa fa-newspaper-o"></i> <span>Новости</span> <i class="fa fa-angle-left pull-right"></i>',
+                                    'label' => 'Новости',
                                     'items' => [
                                         [
                                             'label' => '123',
-                                            'url' => '#',
+                                            'url' => Url::to(['/site/index'])
                                         ],
                                         [
                                             'label' => '345',
@@ -100,76 +99,40 @@ AppAsset::register($this);
                                     ],
                                     'options' => [
                                         'class' => 'treeview',
-                                    ]
-                                ]
+                                    ],
+                                    'submenuTemplate' => "\n<ul class='treeview-menu' role='menu'>\n{items}\n</ul>\n",
+                                    'template' => '<a href="#"><i class="fa fa-newspaper-o"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
+                                ],
+                                [
+                                    'label' => 'Доска',
+                                    'items' => [
+                                        [
+                                            'label' => '123',
+                                            'url' => '#'
+                                        ],
+                                        [
+                                            'label' => '345',
+                                            'url' => '#',
+                                        ],
+                                    ],
+                                    'options' => [
+                                        'class' => 'treeview',
+                                    ],
+                                    'submenuTemplate' => "\n<ul class='treeview-menu' role='menu'>\n{items}\n</ul>\n",
+                                    'template' => '<a href="#"><i class="fa fa-dashboard"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
+                                ],
                             ],
                             'activateItems' => true,
                             'activateParents' => true,
+                            'activeCssClass'=>'active',
                             'encodeLabels' => false,
-                            'dropDownCaret' => false,
+                            /*'dropDownCaret' => false,*/
                             'options' => [
                                 'class' => 'sidebar-menu',
                             ]
                         ]
                     )
                 ?>
-                <ul class="sidebar-menu">
-                    <li class="header">Навигация</li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-newspaper-o"></i> <span>Новости</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active"><a href="<?= Url::to(['/news/create']);?>"><i class="fa fa-circle-o"></i>Добавить новость</a></li>
-                            <li><a href="<?= Url::to(['/news']);?>"><i class="fa fa-circle-o"></i>Все новости</a></li>
-                            <li><a href="<?= Url::to(['/category_news']);?>"><i class="fa fa-circle-o"></i>Категории</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-files-o"></i> <span>Мероприятия</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active"><a href="<?= Url::to(['/events/events/create']) ?>"><i class="fa fa-circle-o"></i>Добавить мероприятие</a></li>
-                            <li><a href="<?= Url::to(['/events']) ?>"><i class="fa fa-circle-o"></i>Все мероприятия</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="<?= Url::to(['/lang']) ?>"><i class="fa fa-flag-o"></i> <span>Языки</span></a></li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>SEO</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active">
-                                <a href="<?= Url::to(['/seo/default/main_page']);?>"><i class="fa fa-circle-o"></i>Главная</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-laptop"></i> <span>Материалы</span> <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="active">
-                                <a href="<?= Url::to(['/materials/materials/create']);?>"><i class="fa fa-circle-o"></i>Добавить материал</a>
-                                <a href="<?= Url::to(['/materials']);?>"><i class="fa fa-circle-o"></i>Все материалы</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="<?= Url::to(['/ms']) ?>"><i class="fa fa-th"></i> <span>Mercury Space</span></a></li>
-                    <!--<li><a href="<?/*= Url::to(['/mercury_city_tower']) */?>"><i class="fa fa-th"></i> <span>Меркурий Сити Тауэр</span></a></li>-->
-                    <li><a href="<?= Url::to(['/options']) ?>"><i class="fa fa-cog"></i> <span>Офисы</span></a>
-                        <ul class="treeview-menu">
-                            <li class="active">
-                                <a href="<?= Url::to(['/tenants']);?>"><i class="fa fa-circle-o"></i>Арендаторы</a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <li><a href="<?= Url::to(['/options']) ?>"><i class="fa fa-cog"></i> <span>Опции</span></a></li>
-
-                </ul>
-
             </section>
             <!-- /.sidebar -->
         </aside>
