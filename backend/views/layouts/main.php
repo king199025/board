@@ -87,10 +87,12 @@ AppAsset::register($this);
                                 ],
                                 [
                                     'label' => 'Новости',
+                                    'active' => Yii::$app->controller->id == 'site',
                                     'items' => [
                                         [
                                             'label' => '123',
-                                            'url' => Url::to(['/site/index'])
+                                            'url' => Url::to(['/site/index']),
+                                            'active' => Yii::$app->controller->id == 'site',
                                         ],
                                         [
                                             'label' => '345',
