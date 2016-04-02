@@ -87,12 +87,12 @@ AppAsset::register($this);
                                 ],
                                 [
                                     'label' => 'Новости',
-                                    'active' => Yii::$app->controller->id == 'site',
+                                    /*'active' => Yii::$app->controller->id == 'site',*/
                                     'items' => [
                                         [
                                             'label' => '123',
                                             'url' => Url::to(['/site/index']),
-                                            'active' => Yii::$app->controller->id == 'site',
+                                            'active' => Yii::$app->requestedRoute == 'site/index',
                                         ],
                                         [
                                             'label' => '345',
@@ -102,7 +102,6 @@ AppAsset::register($this);
                                     'options' => [
                                         'class' => 'treeview',
                                     ],
-                                    'submenuTemplate' => "\n<ul class='treeview-menu' role='menu'>\n{items}\n</ul>\n",
                                     'template' => '<a href="#"><i class="fa fa-newspaper-o"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
                                 ],
                                 [
@@ -120,7 +119,6 @@ AppAsset::register($this);
                                     'options' => [
                                         'class' => 'treeview',
                                     ],
-                                    'submenuTemplate' => "\n<ul class='treeview-menu' role='menu'>\n{items}\n</ul>\n",
                                     'template' => '<a href="#"><i class="fa fa-dashboard"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
                                 ],
                             ],
@@ -129,6 +127,7 @@ AppAsset::register($this);
                             'activeCssClass'=>'active',
                             'encodeLabels' => false,
                             /*'dropDownCaret' => false,*/
+                            'submenuTemplate' => "\n<ul class='treeview-menu' role='menu'>\n{items}\n</ul>\n",
                             'options' => [
                                 'class' => 'sidebar-menu',
                             ]
