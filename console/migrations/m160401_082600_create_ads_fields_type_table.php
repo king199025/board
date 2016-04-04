@@ -16,6 +16,26 @@ class m160401_082600_create_ads_fields_type_table extends Migration
             'id'           => Schema::TYPE_PK,
             'type'   => Schema::TYPE_STRING . '(100) NOT NULL',
         ], $tableOptions);
+
+        $this->insert('ads_fields_type', [
+            'type' => 'checkbox',
+        ]);
+
+        $this->insert('ads_fields_type', [
+            'type' => 'radio',
+        ]);
+
+        $this->insert('ads_fields_type', [
+            'type' => 'text',
+        ]);
+
+        $this->insert('ads_fields_type', [
+            'type' => 'select',
+        ]);
+
+        $this->insert('ads_fields_type', [
+            'type' => 'textarea',
+        ]);
     }
 
     public function down()

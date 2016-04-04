@@ -12,7 +12,11 @@ return [
     'language' => 'ru-RU',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'ads_fields_type' => [
+            'class' => 'backend\modules\ads_fields_type\Ads_fields_type',
+        ],
+    ],
     'components' => [
         /*'user' => [
             'identityClass' => 'common\models\User',
@@ -37,7 +41,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-
+                'fields_type' => 'ads_fields_type/ads_fields_type',
+                'fields_type/create' => 'ads_fields_type/ads_fields_type/create',
+                'fields_type/<id:\d+>' => 'ads_fields_type/ads_fields_type/view',
+                'fields_type/update/<id:\d+>' => 'ads_fields_type/ads_fields_type/update',
             ]
         ],
         'mailer' => [

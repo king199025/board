@@ -47,7 +47,8 @@ AppAsset::register($this);
             <!-- Main content -->
             <section class="content">
                 <?= Alert::widget() ?>
-                <?= $content ?>
+                <?/*= $content */?>
+                <?= \backend\widgets\Login::widget(); ?>
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
         <footer class="main-footer contentLoginAdmin">
@@ -65,8 +66,24 @@ AppAsset::register($this);
                 <span class="logo-lg">Админпанель</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
 
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                       <li>
+                           <?/*=Html::beginForm(['/site/logout'], 'post'); */?><!--
+
+                           --><?/*= Html::submitButton(
+                           '<i class="fa fa-sign-out"></i>',
+                           ['class' => 'btn btn-link']
+                           );*/?>
+
+
+                            <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
+                           <?/*= Html::endForm(); */?>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
         <!-- Left side column. contains the logo and sidebar -->
