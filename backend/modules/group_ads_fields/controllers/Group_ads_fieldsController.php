@@ -1,21 +1,19 @@
 <?php
 
-namespace backend\modules\ads_fields_type\controllers;
-
+namespace backend\modules\group_ads_fields\controllers;
 
 use common\behaviors\AccessSecure;
 use Yii;
-use backend\modules\ads_fields_type\models\AdsFieldsType;
-use backend\modules\ads_fields_type\models\AdsFieldsTypeSearch;
-use yii\filters\AccessControl;
+use backend\modules\group_ads_fields\models\Group_ads_fields;
+use backend\modules\group_ads_fields\models\Group_ads_fieldsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * Ads_fields_typeController implements the CRUD actions for AdsFieldsType model.
+ * Group_ads_fieldsController implements the CRUD actions for Group_ads_fields model.
  */
-class Ads_fields_typeController extends Controller
+class Group_ads_fieldsController extends Controller
 {
     /**
      * @inheritdoc
@@ -23,12 +21,6 @@ class Ads_fields_typeController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
             'AccessSecure' =>
                 [
                     'class' => AccessSecure::className(),
@@ -43,16 +35,23 @@ class Ads_fields_typeController extends Controller
                         ],
                     ],
                 ],
+
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
         ];
     }
 
     /**
-     * Lists all AdsFieldsType models.
+     * Lists all Group_ads_fields models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new AdsFieldsTypeSearch();
+        $searchModel = new Group_ads_fieldsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -62,7 +61,7 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Displays a single AdsFieldsType model.
+     * Displays a single Group_ads_fields model.
      * @param integer $id
      * @return mixed
      */
@@ -74,13 +73,13 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Creates a new AdsFieldsType model.
+     * Creates a new Group_ads_fields model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new AdsFieldsType();
+        $model = new Group_ads_fields();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
@@ -92,7 +91,7 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Updates an existing AdsFieldsType model.
+     * Updates an existing Group_ads_fields model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -111,7 +110,7 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Deletes an existing AdsFieldsType model.
+     * Deletes an existing Group_ads_fields model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -124,15 +123,15 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Finds the AdsFieldsType model based on its primary key value.
+     * Finds the Group_ads_fields model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return AdsFieldsType the loaded model
+     * @return Group_ads_fields the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AdsFieldsType::findOne($id)) !== null) {
+        if (($model = Group_ads_fields::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

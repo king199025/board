@@ -1,21 +1,21 @@
 <?php
 
-namespace backend\modules\ads_fields_type\controllers;
+namespace backend\modules\ads_fields\controllers;
 
-
-use common\behaviors\AccessSecure;
-use Yii;
 use backend\modules\ads_fields_type\models\AdsFieldsType;
-use backend\modules\ads_fields_type\models\AdsFieldsTypeSearch;
-use yii\filters\AccessControl;
+use common\behaviors\AccessSecure;
+use common\models\db\GroupAdsFields;
+use Yii;
+use backend\modules\ads_fields\models\Ads_fields;
+use backend\modules\ads_fields\models\Ads_fieldsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * Ads_fields_typeController implements the CRUD actions for AdsFieldsType model.
+ * Ads_fieldsController implements the CRUD actions for Ads_fields model.
  */
-class Ads_fields_typeController extends Controller
+class Ads_fieldsController extends Controller
 {
     /**
      * @inheritdoc
@@ -23,12 +23,6 @@ class Ads_fields_typeController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
             'AccessSecure' =>
                 [
                     'class' => AccessSecure::className(),
@@ -43,16 +37,22 @@ class Ads_fields_typeController extends Controller
                         ],
                     ],
                 ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
         ];
     }
 
     /**
-     * Lists all AdsFieldsType models.
+     * Lists all Ads_fields models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new AdsFieldsTypeSearch();
+        $searchModel = new Ads_fieldsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -62,7 +62,7 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Displays a single AdsFieldsType model.
+     * Displays a single Ads_fields model.
      * @param integer $id
      * @return mixed
      */
@@ -74,25 +74,27 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Creates a new AdsFieldsType model.
+     * Creates a new Ads_fields model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new AdsFieldsType();
+        $model = new Ads_fields();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'group' => GroupAdsFields::find()->all(),
+                'type' => AdsFieldsType::find()->all(),
             ]);
         }
     }
 
     /**
-     * Updates an existing AdsFieldsType model.
+     * Updates an existing Ads_fields model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -106,12 +108,14 @@ class Ads_fields_typeController extends Controller
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'group' => GroupAdsFields::find()->all(),
+                'type' => AdsFieldsType::find()->all(),
             ]);
         }
     }
 
     /**
-     * Deletes an existing AdsFieldsType model.
+     * Deletes an existing Ads_fields model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -124,15 +128,15 @@ class Ads_fields_typeController extends Controller
     }
 
     /**
-     * Finds the AdsFieldsType model based on its primary key value.
+     * Finds the Ads_fields model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return AdsFieldsType the loaded model
+     * @return Ads_fields the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AdsFieldsType::findOne($id)) !== null) {
+        if (($model = Ads_fields::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -57,71 +57,79 @@ AppAsset::register($this);
             <strong>&copy; My Company <?= date('Y') ?></strong>
         </footer>
     <?php else: ?>
-        <header class="main-header">
-            <!-- Logo -->
-            <a href="<?= Url::to(['/']) ?>" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">Админпанель</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">Админпанель</span>
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
 
-            <nav class="navbar navbar-static-top" role="navigation">
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                       <li>
-                           <?/*=Html::beginForm(['/site/logout'], 'post'); */?><!--
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="<?= Url::to(['/']) ?>" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini">Админпанель</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg">Админпанель</span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
 
-                           --><?/*= Html::submitButton(
-                           '<i class="fa fa-sign-out"></i>',
-                           ['class' => 'btn btn-link']
-                           );*/?>
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                           <li>
+                               <?/*=Html::beginForm(['/site/logout'], 'post'); */?><!--
+
+                               --><?/*= Html::submitButton(
+                               '<i class="fa fa-sign-out"></i>',
+                               ['class' => 'btn btn-link']
+                               );*/?>
 
 
-                            <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
-                           <?/*= Html::endForm(); */?>
-                        </li>
-                    </ul>
+                                <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
+                               <?/*= Html::endForm(); */?>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <?= \backend\widgets\MainMenuAdmin::widget(); ?>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                    <!--<ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol>-->
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <?= Alert::widget() ?>
+                    <?= $content ?>
+                </section><!-- /.content -->
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer contentLoginAdmin">
+                <div class="pull-right hidden-xs">
                 </div>
-            </nav>
-        </header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <?= \backend\widgets\MainMenuAdmin::widget(); ?>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
+                <strong>&copy; My Company <?= date('Y') ?></strong>
+            </footer>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
-                <!--<ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>-->
-            </section>
+            <?php
+            //Yii::$app->getResponse()->redirect(Yii::$app->urlManagerFrontend->createUrl(Url::base()));
 
-            <!-- Main content -->
-            <section class="content">
-                <?= Alert::widget() ?>
-                <?= $content ?>
-            </section><!-- /.content -->
-        </div><!-- /.content-wrapper -->
-        <footer class="main-footer contentLoginAdmin">
-            <div class="pull-right hidden-xs">
-            </div>
-            <strong>&copy; My Company <?= date('Y') ?></strong>
-        </footer>
+                //   \common\classes\Debug::prn(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+            //Yii::$app->getResponse()->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']), 200);
+            //Yii::$app->response->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+            /*return $this->redirect(Yii::$app->urlManagerFrontend->createUrl(Url::base())); */?>
+        <?php endif ?>
 
-
-    <?php endif ?>
 
 
     <!--<div class="wrap">

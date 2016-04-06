@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\behaviors\AccessSecure;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -17,8 +18,23 @@ class SiteController extends Controller
      */
     public function behaviors()
     {
+
         return [
-            'access' => [
+            'AccessSecure' =>
+                [
+                    'class' => AccessSecure::className(),
+                    'rules' => [
+                        [
+                            'actions' => ['login', 'error'],
+                            'allow' => true,
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['admin'],
+                        ],
+                    ],
+                ],
+            /*'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
@@ -30,7 +46,8 @@ class SiteController extends Controller
                         'roles' => ['admin'],
                     ],
                 ],
-            ],
+            ],*/
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -38,6 +55,35 @@ class SiteController extends Controller
                 ],
             ],
         ];
+
+
+        /*if(\common\classes\User::getRole_user()['admin']) {
+
+            return [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [
+                            'actions' => ['login', 'error'],
+                            'allow' => true,
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['admin'],
+                        ],
+                    ],
+                ],
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'logout' => ['post'],
+                    ],
+                ],
+            ];
+        }
+        else {
+            $this->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+        }*/
     }
 
     /**
@@ -80,7 +126,8 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionTest() {
+    public function actionTest()
+    {
         return $this->render('test');
     }
 }

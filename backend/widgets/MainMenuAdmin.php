@@ -8,6 +8,9 @@ use yii\helpers\Url;
 class MainMenuAdmin extends Widget
 {
     public function run(){
+
+        //Debug::prn(Yii::$app->controller->route );
+        //Debug::prn(Yii::$app->controller->module->id );
         echo \yii\widgets\Menu::widget(
             [
                 'items' => [
@@ -15,32 +18,31 @@ class MainMenuAdmin extends Widget
                         'label' => 'Пользователи',
                         'url' => Url::to(['/user/admin']),
                         'template' => '<a href="{url}"><i class="fa fa-users"></i> <span>{label}</span></a>',
-                        'active' => Yii::$app->requestedRoute == 'user/admin',
+                        'active' => Yii::$app->controller->module->id == 'user' || Yii::$app->controller->module->id == 'rbac',
+
                     ],
                     [
                         'label' => 'Управление полями',
                         'items' => [
                             [
                                 'label' => 'Группы полей',
-                                'url' => Url::to(['/site/index']),
-                                'active' => Yii::$app->requestedRoute == 'site/index',
+                                'url' => Url::to(['/group_fields']),
+                                'active' => Yii::$app->controller->module->id == 'group_ads_fields',
                             ],
                             [
                                 'label' => 'Типы полей',
                                 'url' => Url::to(['/fields_type']),
-                                'active' =>
-                                    [
-                                        Yii::$app->requestedRoute == 'ads_fields_type/ads_fields_type',
-                                        Yii::$app->requestedRoute == 'ads_fields_type/ads_fields_type/create',
-                                    ],
+                                'active' => Yii::$app->controller->module->id == 'ads_fields_type' ,
                             ],
                             [
                                 'label' => 'Поля',
-                                'url' => '#',
+                                'url' => Url::to(['/fields']),
+                                'active' => Yii::$app->controller->module->id == 'ads_fields' ,
                             ],
                             [
                                 'label' => 'Значения по умолчанию',
-                                'url' => '#',
+                                'url' => ['/ads_fields_default_value/ads_fields_default_value'],
+                                'active' => Yii::$app->controller->module->id == 'ads_fields_default_value'
                             ],
                         ],
                         'options' => [
@@ -49,21 +51,28 @@ class MainMenuAdmin extends Widget
                         'template' => '<a href="#"><i class="fa fa-leanpub"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
                     ],
                     [
-                        'label' => 'Доска',
+                        'label' => 'Объявления',
                         'items' => [
                             [
-                                'label' => '123',
-                                'url' => '#'
+                                'label' => 'Категории объявлений',
+                                'url' => Url::to(['/category']),
+                                'active' => Yii::$app->controller->module->id == 'category'
                             ],
                             [
-                                'label' => '345',
-                                'url' => '#',
+                                'label' => 'Объявления',
+                                'url' => Url::to(['/adsmanager']),
+                                'active' => Yii::$app->controller->module->id == 'adsmanager'
                             ],
                         ],
                         'options' => [
                             'class' => 'treeview',
                         ],
                         'template' => '<a href="#"><i class="fa fa-dashboard"></i> <span>{label}</span> <i class="fa fa-angle-left pull-right"></i></a>',
+                    ],
+                    [
+                        'label' => 'Магазины',
+                        'url' => '#',
+                        'template' => '<a href="#"><i class="fa fa-shopping-cart"></i> <span>{label}</span> </a>',
                     ],
                 ],
                 'activateItems' => true,
