@@ -32,7 +32,6 @@ use yii\helpers\Html;
         'validateOnType'         => false,
         'validateOnChange'       => false,
     ]) ?>
-123
     <?= $form->field($model, 'login')->textInput(['placeholder' => 'Login']) ?>
 
     <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'Password']) ?>

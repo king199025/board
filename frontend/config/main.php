@@ -17,6 +17,19 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],*/
+
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@app/views/user'
+                ],
+            ],
+        ],
+
+
+
+
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -36,12 +49,22 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-
+                '' => 'mainpage/mainpage',
+                'registration' => '/user/registration/register',
             ]
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'useFileTransport' => false,
+        ],
+    ],
+
+    'modules' => [
+        'mainpage' => [
+            'class' => 'frontend\modules\mainpage\Mainpage',
+        ],
+        'event_user' => [
+            'class' => 'frontend\modules\event_user\Event_user',
         ],
     ],
     'params' => $params,
