@@ -26,6 +26,24 @@ return [
             ],
         ],
 
+        'authClientCollection' => [
+            'class'   => \yii\authclient\Collection::className(),
+
+            'clients' => [
+                'vkontakte' => [
+                    'class'        => 'dektrium\user\clients\VKontakte',
+                    'clientId'     => 'CLIENT_ID',
+                    'clientSecret' => 'CLIENT_SECRET',
+                    'title' => 'ВКонтакте',
+                ],
+                'facebook' => [
+                    'class'        => 'dektrium\user\clients\Facebook',
+                    'clientId'     => 'APP_ID',
+                    'clientSecret' => 'APP_SECRET',
+                    'title' => 'Facebook',
+                ],
+            ],
+        ],
 
 
 
@@ -51,6 +69,10 @@ return [
             'rules' => [
                 '' => 'mainpage/mainpage',
                 'registration' => '/user/registration/register',
+                'forgot' => '/user/recovery/request',
+                'resend' => '/user/registration/resend',
+                'profile' => '/user/settings/profile',
+                'login' => '/user/security/login',
             ]
         ],
         'mailer' => [

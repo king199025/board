@@ -14,9 +14,9 @@ use yii\helpers\Url;
                 if(Yii::$app->user->isGuest):
                 ?>
                     <a href="#" data-toggle="modal" data-target="#loginForm" class="header__check--enter">войти</a>
-                    <a href="<?= Url::toRoute('/registration')?>" class="header__check--enter">регистрация</a>
+                    <a href="<?= Url::toRoute('/registration') ?>" class="header__check--enter">регистрация</a>
                 <?php else: ?>
-                    <a href="#" class="header__check--enter">личный кабинет</a>
+                    <a href="<?= Url::toRoute('/profile') ?>" class="header__check--enter">личный кабинет</a>
                     <a data-method="post" href="/user/logout" class="header__check--enter">Выйти</a>
                 <?php endif; ?>
 

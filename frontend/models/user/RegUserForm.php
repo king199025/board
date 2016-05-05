@@ -6,7 +6,7 @@
  * Time: 13:12
  */
 
-namespace frontend\models;
+namespace frontend\models\user;
 
 
 

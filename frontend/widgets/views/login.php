@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use dektrium\user\widgets\Connect;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
@@ -51,17 +52,19 @@ use yii\helpers\Html;
         <?= Html::submitButton(Yii::t('user', 'Sign in'), ['class' => 'reg__form--btn']) ?>
 
 
-        <a href="#">Не можете войти?</a>
-        <a href="#">Регистрация</a>
+        <a href="<?= Url::toRoute('/forgot') ?>">Забыли пароль?</a>
+        <a href="<?= Url::toRoute('/registration') ?>">Регистрация</a>
         <!--<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>-->
 
         <div class="modal-footer__social">
-
-            <a class="modal-footer__social--link" href="#"><img src="/img/vk-i.png" alt=""/>
+            <?= Connect::widget([
+                'baseAuthUrl' => ['/user/security/auth'],
+            ]) ?>
+            <!--<a class="modal-footer__social--link" href="#"><img src="/img/vk-i.png" alt=""/>
                 Войти через ВКонтакте</a>
 
             <a class="modal-footer__social--link" href="#"><img src="/img/fb-i.png" alt=""/>
-                Войти через Facebook</a>
+                Войти через Facebook</a>-->
 
         </div>
         <?php ActiveForm::end(); ?>

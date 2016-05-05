@@ -72,15 +72,7 @@ AppAsset::register($this);
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
                            <li>
-                               <?/*=Html::beginForm(['/site/logout'], 'post'); */?><!--
-
-                               --><?/*= Html::submitButton(
-                               '<i class="fa fa-sign-out"></i>',
-                               ['class' => 'btn btn-link']
-                               );*/?>
-
-
-                                <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
+                               <a data-method="post" href="<?= Url::to(['/site/logout']); ?>"><i class="fa fa-sign-out"></i></a>
                                <?/*= Html::endForm(); */?>
                             </li>
                         </ul>

@@ -20,18 +20,14 @@ use yii\widgets\ActiveForm;
  */
 
 $this->title = Yii::t('user', 'Sign in');
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
 
-<div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
+
                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-            </div>
-            <div class="panel-body">
+
                 <?php $form = ActiveForm::begin([
                     'id'                     => 'login-form',
                     'enableAjaxValidation'   => true,
@@ -50,8 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= Html::submitButton(Yii::t('user', 'Sign in'), ['class' => 'btn btn-primary btn-block', 'tabindex' => '3']) ?>
 
                 <?php ActiveForm::end(); ?>
-            </div>
-        </div>
+
         <?php if ($module->enableConfirmation): ?>
             <p class="text-center">
                 <?= Html::a(Yii::t('user', 'Didn\'t receive confirmation message?'), ['/user/registration/resend']) ?>
@@ -64,6 +59,5 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php endif ?>
         <?= Connect::widget([
             'baseAuthUrl' => ['/user/security/auth'],
+            'options' => ['template' => '{label}'],
         ]) ?>
-    </div>
-</div>

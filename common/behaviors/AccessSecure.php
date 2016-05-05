@@ -84,7 +84,7 @@ class AccessSecure extends ActionFilter
     public function beforeAction($action)
     {
 
-        if (Yii::$app->user->isGuest || UserFunction::getRole_user()['admin']){
+        if (Yii::$app->user->isGuest || isset(UserFunction::getRole_user()['admin'])){
             $user = $this->user;
             $request = Yii::$app->getRequest();
             /* @var $rule AccessRule */
@@ -110,7 +110,7 @@ class AccessSecure extends ActionFilter
             return false;
         }
         else{
-            return Yii::$app->controller->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));
+            return Yii::$app->controller->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['/']));
         }
         /*if(!UserFunction::getRole_user()['admin']) {
             return Yii::$app->controller->redirect(Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index']));

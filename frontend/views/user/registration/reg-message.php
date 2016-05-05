@@ -1,4 +1,6 @@
 <?php
+
+$this->title = "Регистрация";
 use yii\helpers\Html;
 ?>
 <section class="reg">
@@ -18,7 +20,7 @@ use yii\helpers\Html;
 
             <p class="reg--back">Назад на <a href="/">главную страницу</a></p>
             <p class="reg--reminder">Не получили письмо?</p>
-            <?= Html::a('Отправить еще раз', ['/user/registration/resend'],['class' => 'reg__form--btn']) ?>
+            <?= Html::a('Отправить еще раз', \yii\helpers\Url::toRoute('/resend'),['class' => 'reg__form--btn']) ?>
         </div>
     </div>
 </section>
