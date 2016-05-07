@@ -1,6 +1,7 @@
 <?php
 return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'name'=>'Board',
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -45,6 +46,7 @@ return [
                 'RegistrationForm' => '\frontend\models\user\RegUserForm',
                 'RecoveryForm' => '\frontend\models\user\RecoveryForm',
                 'ResendForm' => '\frontend\models\user\ResendForm',
+                'User' => '\frontend\models\user\UserDec',
             ],
             'enableUnconfirmedLogin' => true,
             'enableGeneratingPassword' => true,
@@ -54,11 +56,11 @@ return [
             'cost' => 12,
             'admins' => ['admin'],
             'mailer' => [
-                'sender' => 'admin@admin.ru', // or ['no-reply@myhost.com' => 'Sender name']
-                'welcomeSubject' => ' ',
+                'sender' => 'admin@board.ru', // or ['no-reply@myhost.com' => 'Sender name']
+                'welcomeSubject' => 'Добро пожаловать',
                 'confirmationSubject' => 'Confirmation subject',
                 'reconfirmationSubject' => 'Email change subject',
-                'recoverySubject' => 'Recovery subject',
+                'recoverySubject' => 'Восстановление',
             ],
         ],
     ],

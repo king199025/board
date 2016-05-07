@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'group_id')->dropDownList(\yii\helpers\ArrayHelper::map($groupFields, 'id', 'name'), ['prompt' => 'Выберите группу полей']) ?>
 
-    <?/*= $form->field($model, 'icon')->textInput(['maxlength' => true]) */?>
+    <?php /*echo $form->field($model, 'icon')->textInput(['maxlength' => true]) */?>
     <div class="imgUpload">
         <div class="media__upload_img"><img src="<?=$model->icon;?>" width="100px"/></div>
 

@@ -40,12 +40,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'parent_id',
                 'format' => 'text',
                 'value' => function($model){
-                    $catName = \common\models\db\Category::find()->where(['id' => $model->parent_id])->one()->name;
-
-                    if(empty($catName)){
+                    //\common\classes\Debug::prn($model);
+                    //$catName = \common\models\db\Category::find()->where(['id' => $model->parent_id])->one()->name;
+                    //\common\classes\Debug::prn($catName);
+                    if(empty($model->parent_id)){
                         return "Главная категория";
                     }else{
-                        return $catName;
+                        return \common\models\db\Category::find()->where(['id' => $model->parent_id])->one()->name;
                     }
                 }
             ],
