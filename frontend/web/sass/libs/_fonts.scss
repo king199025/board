@@ -3,6 +3,7 @@ $qeb: 'QanelasExtraBold';
 $ql: 'QanelasLight';
 $hr: 'HelveticaNeueCyrRoman';
 $hb: 'HelveticaNeueCyrBlack';
+$m: 'MyriadProRegula';
 
 @font-face {
   font-family: 'QanelasMedium';
@@ -46,5 +47,14 @@ $hb: 'HelveticaNeueCyrBlack';
   url('../fonts/HelveticaNeueCyr/HelveticaNeueCyrBlack.woff') format('woff'),
   url('../fonts/HelveticaNeueCyr/HelveticaNeueCyrBlack.ttf') format('truetype'),
   url('../fonts/HelveticaNeueCyr/HelveticaNeueCyrBlack.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'MyriadProRegula';
+  src: url('../fonts/Myriad/MyriadProRegula.eot') format('embedded-opentype'),
+  url('../fonts/Myriad/MyriadProRegula.woff2') format('woff2'),
+  url('../fonts/Myriad/MyriadProRegula.woff') format('woff'),
+  url('../fonts/Myriad/MyriadProRegula.ttf') format('truetype'),
+  url('../fonts/Myriad/MyriadProRegula.svg') format('svg');
 }
 

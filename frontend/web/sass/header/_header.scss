@@ -11,7 +11,7 @@
     float: left;
     text-align: left;
     margin: 10px auto;
-    padding-left: 15%;
+    padding-left: 73px;
     p {
       font-size: 12px;
       text-transform: uppercase;
@@ -31,7 +31,7 @@
     float: left;
     text-align: right;
     margin: 10px auto;
-    padding-right: 15%;
+    padding-right: 65px;
     &--enter{
       font-size: 12px;
       text-transform: uppercase;
@@ -65,18 +65,19 @@
     &--img{
       display: inline-block;
       position: relative;
-      width: 40%;
-      text-align: center;
+      width: 30%;
+      text-align: left;
+      padding-left: 85px;
       float: left;
       margin: 20px auto;
       img{
-        width: 60%;
+        width: 87%;
       }
     }
     &--menu{
       display: inline-block;
       position: relative;
-      width: 60%;
+      width: 70%;
       float: left;
       margin: 20px auto;
       ul{
@@ -84,6 +85,7 @@
         width: 100%;
         float: left;
         list-style: none;
+        padding-left: 14px;
         li{
           display: inline-block;
           float: left;
@@ -93,7 +95,7 @@
             color: #010000;
             font-weight: 400;
             text-transform: uppercase;
-            padding: 10px 15px;
+            padding: 10px 31px;
             @include transition(0.4s);
             &:hover{
               color: #fed530;
@@ -122,12 +124,12 @@
         font-family: $qm;
         font-size: 15px;
         font-weight: 500;
-        text-align: right;
+        text-align: left;
         text-transform: uppercase;
         border: none;
         background-color: #ffd800;
         border-radius: 0px;
-        padding: 15px 10px;
+        padding: 15px 10px 15px 85px;
         @include transition(0.4s);
         &:focus, .btn:hover {
           outline: none;
@@ -190,7 +192,7 @@
     &--search {
       display: inline-block;
       position: relative;
-      width: 40%;
+      width: 39%;
       height: auto;
       float: left;
       background-color: #ffe857;
@@ -222,7 +224,7 @@
     &--add{
       display: inline-block;
       position: relative;
-      width: 30%;
+      width: 31%;
       height: auto;
       float: left;
       background-color: #ffd800;
@@ -231,18 +233,20 @@
         position: relative;
         width: 50%;
         float: left;
+        padding-right: 69px;
         a{
           display: block;
-          /* padding: 10px; */
-          /* margin-top: 6px; */
-          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 9px;
+          text-align: left;
           color: black;
           font-size: 14px;
-          line-height: 51px;
+          line-height: 16px;
           font-weight: 500;
           img{
             padding: 0px 10px;
-            /* float: left; */
+            height: 30px;
+            float: left;
           }
         }
         a:focus{
@@ -253,18 +257,21 @@
         display: inline-block;
         position: relative;
         width: 50%;
+        padding-right: 69px;
         a{
           display: block;
-          /* padding: 10px; */
-          /* margin-top: 6px; */
-          text-align: center;
+          padding-top: 10px;
+          padding-bottom: 9px;
+          text-align: left;
           color: black;
           font-size: 14px;
-          line-height: 51px;
+          line-height: 16px;
           font-weight: 500;
           img{
-            padding: 0px 10px;
-            /* float: left; */
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 30px;
+            float: left;
           }
         }
         a:focus{
@@ -295,13 +302,18 @@
     margin-bottom: 0;
     list-style: none;
     width: 100%;
+    float: left;
+    text-align: center;
     li{
-      width: 16.66%;
+      display: inline-block;
+      float: none;
+      /* width: 16.66%; */
       text-align: center;
+      margin: 0px 33px;
       a{
         img{
-          width: 159px;
-          height: 136px;
+          width: 108px;
+          height: 96px;
           -webkit-filter: sepia(0%);
           @include transition(0.4s)
         }
@@ -311,26 +323,26 @@
           font-size: 15px;
           font-weight: 400;
           text-transform: uppercase;
-          margin-top: -36px;
+          margin-top: -20px;
           -webkit-filter: sepia(0%);
         }
       }
       a:hover{
         img{
-          width: 159px;
-          height: 136px;
+          width: 108px;
+          height: 96px;
           -webkit-filter: sepia(100%);
           @include transition(0.4s);
         }
-        span{
-          display: block;
-          color: #261702;
-          font-size: 15px;
-          font-weight: 400;
-          text-transform: uppercase;
-          margin-top: -36px;
-          -webkit-filter: sepia(0%);
-        }
+        //span{
+        //  display: block;
+        //  color: #261702;
+        //  font-size: 15px;
+        //  font-weight: 400;
+        //  text-transform: uppercase;
+        //  margin-top: -20px;
+        //  -webkit-filter: sepia(0%);
+        //}
       }
     }
   }

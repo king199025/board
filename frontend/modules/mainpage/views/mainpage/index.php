@@ -6,9 +6,8 @@ $this->title = "Доска объявлений";
 
 ?>
 
-<!--all-->
 <section class="all">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 
             <h3 class="all__title">все категории</h3>
@@ -38,7 +37,12 @@ $this->title = "Доска объявлений";
                             купить или продать из рук в руки практически
                             все, что угодно.</p>
                     </div>
+
                 </div>
+
+
+
+
             </div>
         </div>
     </div>
@@ -46,7 +50,7 @@ $this->title = "Доска объявлений";
 <!--close all-->
 <!--best-->
 <section class="best">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 
             <h3 class="best__title">ЛУЧШИЕ НА СЕГОДНЯ</h3>
@@ -71,7 +75,7 @@ $this->title = "Доска объявлений";
 
                         <p class="owl-carousel-1__item--content__price">65 900 руб</p>
 
-                        <a class="owl-carousel-1__item--content__link" href="#">подробнее</a>
+                        <a class="owl-carousel-1__item--content__link" href="single-page.html">подробнее</a>
 
                     </div>
 
@@ -94,7 +98,7 @@ $this->title = "Доска объявлений";
 
                         <p class="owl-carousel-1__item--content__price">65 900 руб</p>
 
-                        <a class="owl-carousel-1__item--content__link" href="#">подробнее</a>
+                        <a class="owl-carousel-1__item--content__link" href="single-page.html">подробнее</a>
 
                     </div>
 
@@ -117,7 +121,7 @@ $this->title = "Доска объявлений";
 
                         <p class="owl-carousel-1__item--content__price">65 900 руб</p>
 
-                        <a class="owl-carousel-1__item--content__link" href="#">подробнее</a>
+                        <a class="owl-carousel-1__item--content__link" href="single-page.html">подробнее</a>
 
                     </div>
 
@@ -140,7 +144,7 @@ $this->title = "Доска объявлений";
 
                         <p class="owl-carousel-1__item--content__price">65 900 руб</p>
 
-                        <a class="owl-carousel-1__item--content__link" href="#">подробнее</a>
+                        <a class="owl-carousel-1__item--content__link" href="single-page.html">подробнее</a>
 
                     </div>
 
@@ -154,56 +158,74 @@ $this->title = "Доска объявлений";
 <!--close best-->
 <!--new shops-->
 <section class="new-shops">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 
             <h3 class="new-shops__title">НОВЫЕ МАГАЗИНЫ</h3>
 
-            <div class="col-lg-6 col-sm-6 col-xs-12">
-                <!--new-shops slider-->
-                <div class="owl-carousel-2">
-                    <div class="owl-carousel-2__item">
-                        <div class="owl-carousel-2__item--img">
-                            <img src="img/best-slide1.png" alt=""/>
+            <div class="col-lg-6 col-sm-6 col-xs-12" style="border: 1px solid #bcbcbc">
+                <div class="row">
+                    <!--new-shops slider-->
+                    <div class="owl-carousel-2">
+                        <div class="owl-carousel-2__item">
+                            <div class="owl-carousel-2__item--img">
+                                <img src="img/best-slide1.png" alt=""/>
+                            </div>
+                            <a class="owl-carousel-2__item--favorite" href="#">
+                                <img src="img/favorite.png" alt="favorite">
+                            </a>
+                        </div>
+                        <div class="owl-carousel-2__item">
+                            <div class="owl-carousel-2__item--img">
+                                <img src="img/new-shop1.png" alt=""/>
+                            </div>
+                            <a class="owl-carousel-2__item--favorite" href="#">
+                                <img src="img/favorite.png" alt="favorite">
+                            </a>
+                        </div>
+                        <div class="owl-carousel-2__item">
+                            <div class="owl-carousel-2__item--img">
+                                <img src="img/best-slide1.png" alt=""/>
+                            </div>
+                            <a class="owl-carousel-2__item--favorite" href="#">
+                                <img src="img/favorite.png" alt="favorite">
+                            </a>
+                        </div>
+                        <div class="owl-carousel-2__item">
+                            <div class="owl-carousel-2__item--img">
+                                <img src="img/new-shop2.png" alt=""/>
+                            </div>
+                            <a class="owl-carousel-2__item--favorite" href="#">
+                                <img src="img/favorite.png" alt="favorite">
+                            </a>
                         </div>
                     </div>
-                    <div class="owl-carousel-2__item">
-                        <div class="owl-carousel-2__item--img">
-                            <img src="img/new-shop1.png" alt=""/>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-2__item">
-                        <div class="owl-carousel-2__item--img">
-                            <img src="img/best-slide1.png" alt=""/>
-                        </div>
-                    </div>
-                    <div class="owl-carousel-2__item">
-                        <div class="owl-carousel-2__item--img">
-                            <img src="img/new-shop2.png" alt=""/>
-                        </div>
-                    </div>
+                    <!--close new-shops slider-->
                 </div>
-                <!--close new-shops slider-->
             </div>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <a class="new-shops__more" href="#">
-                    <img src="img/new-shop1.png" alt=""/>
-                    <div class="new-shops__more--link" href="#">подробнее</div>
-                </a>
-                <a class="new-shops__more" href="#">
-                    <img src="img/new-shop3.png" alt=""/>
-                    <div class="new-shops__more--link" href="#">подробнее</div>
-                </a>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="border: 1px solid #bcbcbc">
+                <div class="row">
+                    <a class="new-shops__more" href="#">
+                        <img src="img/new-shop1.png" alt=""/>
+                        <div class="new-shops__more--link" href="#">подробнее</div>
+                    </a>
+                    <a class="new-shops__more" href="#">
+                        <img src="img/new-shop3.png" alt=""/>
+                        <div class="new-shops__more--link" href="#">подробнее</div>
+                    </a>
+                </div>
             </div>
-            <div class="col-lg-3 col-sm-6 col-xs-12">
-                <a class="new-shops__more" href="#">
-                    <img src="img/new-shop2.png" alt=""/>
-                    <div class="new-shops__more--link" href="#">подробнее</div>
-                </a>
-                <a class="new-shops__more" href="#">
-                    <img src="img/new-shop4.png" alt=""/>
-                    <div class="new-shops__more--link" href="#">подробнее</div>
-                </a>
+            <div class="col-lg-3 col-sm-6 col-xs-12" style="border: 1px solid #bcbcbc">
+                <div class="row">
+                    <a class="new-shops__more" href="#">
+                        <img src="img/new-shop2.png" alt=""/>
+                        <div class="new-shops__more--link" href="#">подробнее</div>
+                    </a>
+                    <a class="new-shops__more" href="#">
+                        <img src="img/new-shop4.png" alt=""/>
+                        <div class="new-shops__more--link" href="#">подробнее</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -211,7 +233,7 @@ $this->title = "Доска объявлений";
 <!--close new shops-->
 <!--coupon-->
 <section class="coupon">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <h3 class="coupon__title">КУПОНЫ</h3>
 
@@ -225,7 +247,7 @@ $this->title = "Доска объявлений";
 
                         <span>Москва   ВДНХ  Домодедовская   Марьино  Южная<br>
                             Время продаж ограничено!
-                        <a href="#">подробнее</a>
+                        <a href="single-page.html">подробнее</a>
                         </span>
 
                     </div>
@@ -243,7 +265,7 @@ $this->title = "Доска объявлений";
                         <img src="img/coupon1.png" alt="купон">
                         <span>Москва   ВДНХ  Домодедовская   Марьино  Южная<br>
                             Время продаж ограничено!
-                        <a href="#">подробнее</a>
+                        <a href="single-page.html">подробнее</a>
                         </span>
                     </div>
                     <div class="owl-carousel-3__item--content">
@@ -259,7 +281,7 @@ $this->title = "Доска объявлений";
                         <img src="img/coupon1.png" alt="купон">
                         <span>Москва   ВДНХ  Домодедовская   Марьино  Южная<br>
                             Время продаж ограничено!
-                        <a href="#">подробнее</a>
+                        <a href="single-page.html">подробнее</a>
                         </span>
                     </div>
                     <div class="owl-carousel-3__item--content">
@@ -276,7 +298,7 @@ $this->title = "Доска объявлений";
                         <img src="img/coupon1.png" alt="купон">
                         <span>Москва   ВДНХ  Домодедовская   Марьино  Южная<br>
                             Время продаж ограничено!
-                        <a href="#">подробнее</a>
+                        <a href="single-page.html">подробнее</a>
                         </span>
                     </div>
                     <div class="owl-carousel-3__item--content">

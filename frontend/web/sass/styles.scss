@@ -2,53 +2,58 @@
 @import "header/_style";
 @import "footer/_style";
 
-html, body{
+html, body {
   width: 100%;
   height: 100%;
 }
-body{
+
+body {
   font-family: $qm;
 }
+
 a {
   text-decoration: none
 }
+
 a:hover, a:focus, a:active {
   text-decoration: none;
+  outline: none;
 }
+
 /*new-shops*/
-.new-shops{
+.new-shops {
   display: block;
   position: relative;
   width: 100%;
   float: left;
-  padding: 0px 50px;
-  &__title{
+  &__title {
     color: #261702;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
     text-align: left;
   }
-  &__more{
+  &__more {
     position: relative;
-    width: 311px;
-    height: 311px;
+    width: 291px;
+    height: 292px;
+    padding: 12px;
     float: left;
-    padding: -21px;
-    margin: 10px auto;
+    margin: 0px auto;
+    border-bottom:1px solid #bcbcbc;
     @include overflow-img;
-    img{
+    img {
       max-width: 150%;
     }
-    &--link{
+    &--link {
       display: block;
       position: absolute;
-      width: 100%;
+      width: 92%;
       height: 71px;
-      bottom: 0;
+      bottom: 13px;
       opacity: 0;
       text-align: center;
-      background-color: rgba(255,216,0, 0.59);
+      background-color: rgba(255, 216, 0, 0.59);
       font-size: 32px;
       font-weight: 300;
       line-height: 62px;
@@ -56,22 +61,22 @@ a:hover, a:focus, a:active {
       @include transition(0.4s);
     }
   }
-  &__more:hover{
+  &__more:hover {
 
-   .new-shops__more--link{
+    .new-shops__more--link {
       opacity: 1;
-     @include transition(0.4s);
+      @include transition(0.4s);
     }
   }
 }
+
 /*close new-shops*/
 /*coupon*/
-.coupon{
+.coupon {
   position: relative;
   width: 100%;
   float: left;
-  padding: 0px 50px;
-  &__title{
+  &__title {
     color: #261702;
     font-size: 20px;
     font-weight: 400;
@@ -79,15 +84,16 @@ a:hover, a:focus, a:active {
     text-align: left;
   }
 }
+
 /*close coupon*/
 /*registration*/
-.reg{
+.reg {
   display: block;
   position: relative;
   width: 100%;
   float: left;
   margin: 10px auto;
-  &--reminder{
+  &--reminder {
     color: #424242;
     font-size: 20px;
     font-weight: 400;
@@ -95,55 +101,55 @@ a:hover, a:focus, a:active {
     text-align: center;
     margin-bottom: 20px;
   }
-  &--back{
+  &--back {
     color: #010100;
     font-size: 30px;
     font-family: $qm;
     line-height: 49px;
     text-align: center;
-    a{
+    a {
       color: #010100;
       text-decoration: underline;
     }
   }
-  &__title{
+  &__title {
     color: #261702;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
     text-align: left;
   }
-  &__content{
+  &__content {
     display: block;
     position: relative;
     width: 100%;
     float: left;
     border: 10px solid #ffd800;
     margin: 20px auto;
-    &--info{
+    &--info {
       width: 100%;
       padding: 0px;
-      p{
+      p {
         color: #010100;
         font-size: 22px;
         line-height: 30px;
         margin-top: 18px;
         margin-bottom: 17px;
-        span{
+        span {
           font-weight: bold;
         }
       }
-      ul{
+      ul {
         list-style-image: url("../img/reg-list.png");
         padding-left: 60px;
-        li{
+        li {
           color: #010100;
           font-size: 22px;
           line-height: 30px;
         }
       }
     }
-    &--subtitle{
+    &--subtitle {
       color: #424242;
       font-size: 46px;
       font-weight: 500;
@@ -153,11 +159,11 @@ a:hover, a:focus, a:active {
       margin-bottom: 30px;
     }
   }
-  &__form{
+  &__form {
     display: block;
     position: relative;
     width: 100%;
-    &--field{
+    &--field {
       width: 95%;
       height: 50px;
       font-size: 22px;
@@ -165,23 +171,23 @@ a:hover, a:focus, a:active {
       outline: none;
       padding-left: 10px;
     }
-    span{
+    span {
       width: 20px;
       height: 10px;
-        img{
-          width: 15px;
-        }
+      img {
+        width: 15px;
+      }
     }
-    input[type=checkbox]{
+    input[type=checkbox] {
       float: left;
       margin-right: 10px;
     }
-    p{
+    p {
       color: black;
       font-size: 20px;
       font-weight: 300;
     }
-    &--btn{
+    &--btn {
       display: block;
       width: 396px;
       height: 51px;
@@ -196,17 +202,17 @@ a:hover, a:focus, a:active {
       text-align: center;
       cursor: pointer;
     }
-    &--btn:hover{
+    &--btn:hover {
       outline: none;
       color: #010100;
     }
   }
-  .change__form{
+  .change__form {
     display: block;
     position: relative;
     width: 50%;
     margin: 10px auto;
-    &--field{
+    &--field {
       width: 95%;
       height: 50px;
       font-size: 22px;
@@ -214,221 +220,512 @@ a:hover, a:focus, a:active {
       outline: none;
       padding-left: 10px;
     }
-    span{
+    span {
       width: 20px;
       height: 10px;
-      img{
+      img {
         width: 15px;
       }
     }
-    input[type=checkbox]{
+    input[type=checkbox] {
       float: left;
       margin-right: 10px;
     }
-    p{
+    p {
       color: black;
       font-size: 20px;
       font-weight: 300;
     }
   }
 }
+
 /*close registration*/
 /*ad*/
-.ad{
+.ad {
   display: block;
   position: relative;
   width: 100%;
   float: left;
-  padding: 10px 30px;
-  &--pass{
+  padding-left: 160px;
+  padding-right: 169px;
+  &--pass {
     display: block;
-//    float: left;
+    //    float: left;
     margin-right: 10px;
-    color: #020000;
-    font-size: 17px;
-    line-height: 28px;
+    a{
+      color: #020000;
+      font-family: $ql;
+      font-size: 13px;
+      line-height: 21px;
+    }
+    a:hover{
+      color: #020000;
+    }
   }
-  &--title{
+  &--title {
     color: #020000;
     font-family: $hr;
-    font-size: 40px;
-    line-height: 64px;
+    font-size: 31px;
+    line-height: 49px;
     text-align: left;
     margin-bottom: 0px;
   }
-  &--subtitle{
+  &--subtitle {
     color: #020000;
     font-family: $hr;
-    font-size: 17px;
-    font-weight: 300;
+    font-size: 13px;
     line-height: 0px;
+    margin-bottom: 0px;
   }
-  &__slider{
+  &__slider {
     display: block;
     position: relative;
     width: 50%;
     float: left;
   }
-  &__descr{
+  &__descr {
     display: block;
     position: relative;
     width: 50%;
     float: left;
-    &--date{
+    padding-left: 50px;
+    &--date {
       color: #030000;
-      font-size: 14px;
-      line-height: 35px;
+      font-family: $ql;
+      font-size: 22px;
+      line-height: 27px;
       text-align: right;
     }
-    &--price{
+    &--price {
       display: block;
       position: relative;
       width: 33%;
-      height: 106px;
+      height: 78px;
       float: left;
       background-color: #4eb964;
-//      margin: 0 2px;
+      //      margin: 0 2px;
       font-size: 25px;
       text-align: center;
       color: #ffffff;
-      line-height: 102px;
+      line-height: 76px;
     }
-    &--condition{
+    &--condition {
       display: block;
       position: relative;
       width: 33%;
-      height: 106px;
+      height: 78px;
       float: left;
       background-color: #ffdb2d;
-//      margin: 0 2px;
       color: #180f0f;
-      font-size: 49px;
+      font-size: 37px;
       text-align: center;
-      font-weight: 700;
-      line-height: 100px;
+      font-weight: bold;
+      line-height: 76px;
     }
-    &--star{
+    &--star {
       display: block;
       position: relative;
       width: 33%;
-      height: 106px;
+      height: 78px;
       float: left;
       background-color: #e1e1e1;
-//      margin: 0 2px;
-      img{
+      //      margin: 0 2px;
+      img {
         margin: 20px 65px;
       }
     }
-    &--author{
+    &--author {
       display: block;
       position: relative;
       width: 50%;
       float: left;
       color: #030000;
-      text-align: center;
-      font-size: 29px;
-      font-weight: 700;
-      line-height: 61px;
+      text-align: right;
+      font-size: 23px;
+      font-weight: bold;
+      line-height: 47px;
+      padding-right: 10px;
+      margin-top: 10px;
+      border: 1px solid #d9d8d8;
     }
-    &--number{
+    &--number {
       display: block;
       position: relative;
-      width: 50%;
+      width: 49%;
       float: left;
       color: #030000;
-      font-size: 27px;
+      font-size: 23px;
       font-weight: 500;
-      line-height: 61px;
+      line-height: 47px;
+      padding-left: 10px;
+      margin-top: 10px;
       text-decoration: underline;
+      border: 1px solid #d9d8d8;
     }
-    &--number:hover, .ad__descr--number:focus, .ad__descr--number:visited{
+    &--number:hover, .ad__descr--number:focus, .ad__descr--number:visited {
       color: #030000;
       text-decoration: underline;
     }
-    &--show{
+    &--show {
       display: none;
       position: relative;
-      width: 100%;
+      width: 99%;
       float: left;
+      margin-bottom: 10px;
       color: #030000;
       text-align: center;
-      font-size: 27px;
+      font-size: 23px;
       font-weight: 500;
-      line-height: 61px;
+      line-height: 36px;
       border: 1px solid #030000;
       border-radius: 5px;
     }
-    &--reserve{
+    &--reserve {
       display: block;
       position: relative;
-      width: 100%;
-      height: 65px;
+      width: 99%;
+      height: 49px;
       float: left;
-      margin: 10px auto;
+      margin: 0px auto;
       background-color: #ffdb2c;
       border: 1px solid rgba(6, 3, 0, 0.31);
       color: #030000;
       text-align: center;
-      font-size: 29px;
+      font-size: 22px;
       font-weight: 500;
-      line-height: 54px;
+      line-height: 43px;
       @include transition(0.4s);
     }
-    &--reserve:hover{
+    &--reserve:hover {
       border: 1px solid #ffdb2c;
       background-color: #fff;
       color: #030000;
     }
-    &--id{
+    &--id {
       display: block;
       position: relative;
       width: 100%;
       float: left;
+      margin-top: 10px;
       color: #030000;
       text-align: center;
       font-family: $ql;
-      font-size: 29px;
+      font-size: 22px;
       font-weight: 300;
-      line-height: 35px;
+      line-height: 27px;
     }
-    &--subscribe{
+    &--subscribe {
       display: block;
       position: relative;
-      width: 371px;
-      height: 50px;
+      width: 285px;
+      height: 47px;
       float: left;
       color: #0f0000;
-      font-size: 19px;
+      font-size: 15px;
       font-weight: 500;
-      line-height: 45px;
+      line-height: 40px;
       text-align: center;
       border: 1px solid #ffdb2c;
-      margin: 10px 136px;
     }
-    &--subscribe:hover{
+    &--subscribe:hover {
       color: #0f0000;
     }
-    &__owner{
+    &__owner {
       display: block;
       position: relative;
       width: 100%;
       float: left;
-      &--title{
+      margin-top: 80px;
+      &--title {
         color: #030000;
-        text-align: center;
-        font-size: 30px;
+        text-align: left;
+        font-size: 21px;
         font-weight: 500;
-        line-height: 45px;
+        line-height: 35px;
       }
-      &--img{
+      &--img {
         display: block;
         position: relative;
-        width: 200px;
-        height: 210px;
+        float: left;
+        width: 144px;
+        height: 145px;
         @include overflow-img;
-        img{
+        img {
           max-width: 150%;
         }
+      }
+      &--send {
+        display: block;
+        position: relative;
+        width: 309px;
+        height: 48px;
+        float: left;
+        margin: 3px 10px;
+        padding-left: 16px;
+        background-color: #ffdb2c;
+        border: 1px solid rgba(6, 3, 0, 0.31);
+        text-align: left;
+        color: #030000;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 43px;
+        @include transition(0.4s);
+        .fa {
+          width: 28px;
+          padding-right: 55px;
+        }
+      }
+      &--send:hover {
+        background-color: #ffffff;
+        border: 1px solid #ffdb2c;
+        color: #030000;
+      }
+      &--time {
+        display: block;
+        position: relative;
+        width: 309px;
+        height: 48px;
+        float: left;
+        margin: 3px 10px;
+        padding-left: 16px;
+        border: 1px solid #ebebeb;
+        text-align: left;
+        color: #030000;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 43px;
+        .fa {
+          width: 28px;
+          padding-right: 55px;
+        }
+      }
+      &--other {
+        float: right;
+        color: #030000;
+        font-family: $ql;
+        font-size: 22px;
+        font-weight: 500;
+        text-decoration: underline;
+      }
+      &--other:hover {
+        color: #030000;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__content {
+    display: block;
+    position: relative;
+    width: 70%;
+    float: left;
+    margin-top: -72px;
+    &--title {
+      color: #030000;
+      font-size: 33px;
+      font-weight: 400;
+      line-height: 53px;
+    }
+    &--descr {
+      color: #030000;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+    &--counter {
+      color: #010000;
+      font-family: $ql;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 27px;
+      margin-top: 30px;
+      margin-bottom: 70px;
+    }
+    &--communication {
+      color: black;
+      font-size: 29px;
+      font-weight: 500;
+      line-height: 36px;
+    }
+    &--communication:after {
+      content: "";
+      position: absolute;
+      width: 476px;
+      height: 7px;
+      background-color: #ffdb2c;
+      bottom: 411px;
+      left: 0px;
+    }
+    &--pnumber {
+      color: #131f36;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 80px;
+    }
+    &--link {
+      color: #a3a3a3;
+      font-size: 16px;
+      line-height: 54px;
+      text-decoration: underline;
+    }
+    &--link:hover {
+      color: #a3a3a3;
+      font-size: 16px;
+      line-height: 54px;
+      text-decoration: underline;
+    }
+    &--send {
+      display: block;
+      position: relative;
+      width: 170px;
+      height: 54px;
+      float: left;
+      margin-right: 10px;
+      background-color: #ffdb2c;
+      color: #010000;
+      font-size: 21px;
+      line-height: 54px;
+      text-align: center;
+    }
+    &--send:hover {
+      color: #010000;
+    }
+    &__form {
+      display: block;
+      position: relative;
+      width: 100%;
+      &--field {
+        width: 45%;
+        height: 50px;
+        font-size: 22px;
+        font-family: $ql;
+        margin: 10px auto;
+        outline: none;
+        padding-left: 10px;
+      }
+      &--textarea {
+        width: 508px;
+        height: 160px;
+        font-size: 22px;
+        font-family: $ql;
+        margin: 10px auto;
+        outline: none;
+        padding-left: 10px;
+      }
+    }
+  }
+  &__social {
+    display: block;
+    position: relative;
+    width: 70%;
+    float: left;
+    &--google {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #d41c0b;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      p {
+        color: white;
+        font-size: 25px;
+        font-family: "Helvetica Neue", sans-serif;
+        text-align: center;
+        line-height: 44px;
+      }
+    }
+    &--twitter {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #00c5fe;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      .fa {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        line-height: 44px;
+        padding-left: 12px;
+      }
+    }
+    &--vk {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #0062db;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      p {
+        color: white;
+        font-size: 25px;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: bold;
+        text-align: center;
+        line-height: 44px;
+        text-transform: uppercase;
+      }
+    }
+    &--rss {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #ff9100;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      .fa {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        line-height: 44px;
+        padding-left: 12px;
+      }
+    }
+    &--fb {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #0062da;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      p {
+        color: white;
+        font-size: 25px;
+        font-family: "Helvetica Neue", sans-serif;
+        text-align: center;
+        line-height: 44px;
+      }
+    }
+    &--odnoklassniki {
+      display: inline-block;
+      position: relative;
+      width: 45px;
+      height: 45px;
+      margin: 10px 10px;
+      background-color: #ff9100;
+      border-radius: 3px;
+      //border: 1px solid #ffdb9b;
+      @include box-shadow(0px, 7px, 15px, -7px, #000000);
+      .fa {
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        line-height: 44px;
+        padding-left: 14px;
       }
     }
   }
@@ -440,7 +737,7 @@ a:hover, a:focus, a:active {
   padding: 15px;
   border-bottom: none;
   text-align: center;
-  img{
+  img {
     margin-top: -49px;
   }
   .modal-title {
@@ -451,7 +748,7 @@ a:hover, a:focus, a:active {
     color: #010100;
     text-align: center;
   }
-  a{
+  a {
     font-family: $hr;
     font-size: 17px;
     font-weight: 400;
@@ -461,7 +758,8 @@ a:hover, a:focus, a:active {
     text-decoration: underline;
   }
 }
-.modal-body{
+
+.modal-body {
   .reg__form--field {
     width: 100%;
     height: 50px;
@@ -473,16 +771,17 @@ a:hover, a:focus, a:active {
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(229, 229, 229, 0.25), inset 0 1px 3px rgba(204, 204, 203, 0.45);
   }
-  input[type=checkbox]{
+  input[type=checkbox] {
     float: left;
     margin: 10px 10px;
   }
-  p{
+  p {
     color: black;
     font-size: 24px;
     line-height: 32px;
   }
 }
+
 .modal-footer {
   padding: 15px;
   text-align: center;
@@ -501,7 +800,7 @@ a:hover, a:focus, a:active {
     line-height: 36px;
     text-transform: uppercase;
   }
-  a{
+  a {
     color: #010100;
     font-family: $hr;
     font-size: 12px;
@@ -509,33 +808,44 @@ a:hover, a:focus, a:active {
     line-height: 20px;
     text-decoration: underline;
   }
-  a:nth-of-type(1){
+  a:nth-of-type(1) {
     margin-right: 88px;
   }
-  &__social{
+  &__social {
     display: block;
     width: 100%;
-    &--link{
+    margin-top: 20px;
+    &--link {
       display: block;
       width: 50%;
-      font-size: 17px!important;
+      font-size: 17px !important;
       float: left;
-      margin: 10px auto!important;
-      text-decoration: none!important;
+      margin: 10px auto !important;
+      text-decoration: none !important;
+    }
+    ul.auth-clients {
+      display: inline-block;
+      margin: 0 0 1em;
+      list-style: none;
+      overflow: auto;
+      li.auth-client a:nth-of-type(1) {
+        margin-right: 0px;
+      }
     }
   }
-  &--underline{
+  &--underline {
     display: block;
     width: 100%;
     height: 17px;
     float: left;
     overflow: hidden;
     margin-top: -4px;
-    img{
+    img {
       width: 100%;
     }
   }
 }
+
 /*close modal*/
 
 @import "responsive/_style";

@@ -33,6 +33,10 @@ use yii\helpers\Html;
         'validateOnBlur'         => false,
         'validateOnType'         => false,
         'validateOnChange'       => false,
+        'fieldConfig' => [
+            'template' => '<div class="col-sm-10">{error}</div>{input}',
+
+    ],
     ]) ?>
     <div class="modal-header">
         <img src="/img/sticker.png" alt="sticker"/>
@@ -44,9 +48,11 @@ use yii\helpers\Html;
         <?= $form->field($model, 'login')->textInput(['placeholder' => 'Введите ваш login', 'class' => 'reg__form--field']) ?>
 
         <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'Парол', 'class' => 'reg__form--field']) ?>
+        <?/*= $form->field($model, 'rememberMe')->checkbox(['id'=>'login-form-rememberme']) */?>
 
-        <input type="checkbox" id="login-form-rememberme" name="login-form[rememberMe]" value="1">
-        <p>Запомнить меня</p>
+        <?= $form->field($model, 'rememberMe')->checkbox(['id'=>'login-form-rememberme']) ?>
+        <!--<input type="checkbox" id="login-form-rememberme" name="login-form[rememberMe]" value="1">
+        <p>Запомнить меня</p>-->
     </div>
     <div class="modal-footer">
         <?= Html::submitButton(Yii::t('user', 'Sign in'), ['class' => 'reg__form--btn']) ?>
