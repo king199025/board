@@ -3,8 +3,14 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m160401_104521_create_ads_shop_table extends Migration
+/**
+ * Handles the creation for table `ads_shop_table`.
+ */
+class m160608_102944_create_ads_shop_table extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function up()
     {
         $tableOptions = null;

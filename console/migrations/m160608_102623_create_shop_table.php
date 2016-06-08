@@ -3,8 +3,14 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m160401_103522_create_shop_table extends Migration
+/**
+ * Handles the creation for table `shop_table`.
+ */
+class m160608_102623_create_shop_table extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function up()
     {
         $tableOptions = null;
@@ -22,7 +28,6 @@ class m160401_103522_create_shop_table extends Migration
             'dt_add'        => Schema::TYPE_INTEGER . '(11) NOT NULL',
             'dt_update'     => Schema::TYPE_INTEGER . '(11) NOT NULL',
             'status'        => Schema::TYPE_INTEGER . '(2) NOT NULL',
-            'vip'           => Schema::TYPE_INTEGER . '(2) DEFAULT 0',
             'top'           => Schema::TYPE_INTEGER . '(2) DEFAULT 0',
             'views'         => Schema::TYPE_INTEGER . '(11) DEFAULT 0',
             'header_img'    => Schema::TYPE_STRING . '(255) DEFAULT NULL',
@@ -31,10 +36,12 @@ class m160401_103522_create_shop_table extends Migration
         ], $tableOptions);
 
         $this->addForeignKey('shop_user_fk', 'shop', 'user_id', 'user', 'id', 'RESTRICT', 'CASCADE');
+        $this->addForeignKey('shop_status_fk', 'shop', 'status', 'status', 'id', 'RESTRICT', 'CASCADE');
     }
 
     public function down()
     {
+        $this->dropForeignKey('shop_status_fk', 'shop');
         $this->dropForeignKey('shop_user_fk', 'shop');
         $this->dropTable('shop');
     }

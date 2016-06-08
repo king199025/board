@@ -3,8 +3,14 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m160401_102231_create_ads_img_table extends Migration
+/**
+ * Handles the creation for table `ads_img_table`.
+ */
+class m160608_094126_create_ads_img_table extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function up()
     {
         $tableOptions = null;
@@ -15,7 +21,8 @@ class m160401_102231_create_ads_img_table extends Migration
         $this->createTable('ads_img', [
             'id'           => Schema::TYPE_PK,
             'ads_id'       => Schema::TYPE_INTEGER . '(11) NOT NULL',
-            'img'          => Schema::TYPE_STRING . '(255) NOT NULL'
+            'img'          => Schema::TYPE_STRING . '(255) NOT NULL',
+            'img_thumb'    => Schema::TYPE_STRING . '(255) NOT NULL'
         ], $tableOptions);
 
         $this->addForeignKey('ads_img_ads_fk', 'ads_img', 'ads_id', 'ads', 'id', 'RESTRICT', 'CASCADE');

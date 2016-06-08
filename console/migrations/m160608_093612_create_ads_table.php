@@ -3,8 +3,14 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m160401_100857_create_ads_table extends Migration
+/**
+ * Handles the creation for table `ads_table`.
+ */
+class m160608_093612_create_ads_table extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function up()
     {
         $tableOptions = null;
@@ -23,20 +29,26 @@ class m160401_100857_create_ads_table extends Migration
             'slug'          => Schema::TYPE_STRING . '(255) DEFAULT NULL',
             'status'        => Schema::TYPE_INTEGER . '(2) DEFAULT 0',
             'views'         => Schema::TYPE_INTEGER . '(11) DEFAULT 0',
-            'vip'           => Schema::TYPE_INTEGER . '(2) DEFAULT 0',
             'top'           => Schema::TYPE_INTEGER . '(2) DEFAULT 0',
             'cover'         => Schema::TYPE_STRING . '(255) NOT NULL',
+            'region_id'     => Schema::TYPE_INTEGER . '(11) NOT NULL',
+            'city_id'     => Schema::TYPE_INTEGER . '(11) NOT NULL'
         ], $tableOptions);
 
         $this->addForeignKey('ads_category_fk', 'ads', 'category_id', 'category', 'id', 'RESTRICT', 'CASCADE');
         $this->addForeignKey('ads_user_fk', 'ads', 'user_id', 'user', 'id', 'RESTRICT', 'CASCADE');
-
+        $this->addForeignKey('ads_status_fk', 'ads', 'status', 'status', 'id', 'RESTRICT', 'CASCADE');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function down()
     {
+        $this->dropForeignKey('ads_status_fk', 'ads');
         $this->dropForeignKey('ads_user_fk', 'ads');
         $this->dropForeignKey('ads_category_fk', 'ads');
+
 
         $this->dropTable('ads');
     }

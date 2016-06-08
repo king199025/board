@@ -3,8 +3,14 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-class m160401_084022_create_ads_fields_default_value_table extends Migration
+/**
+ * Handles the creation for table `ads_fields_default_value_table`.
+ */
+class m160608_091927_create_ads_fields_default_value_table extends Migration
 {
+    /**
+     * @inheritdoc
+     */
     public function up()
     {
         $tableOptions = null;
@@ -15,15 +21,18 @@ class m160401_084022_create_ads_fields_default_value_table extends Migration
         $this->createTable('ads_fields_default_value', [
             'id'                => Schema::TYPE_PK,
             'value'             => Schema::TYPE_STRING . '(255) NOT NULL',
-            'ads_field_type_id' => Schema::TYPE_INTEGER . '(11) NOT NULL'
+            'ads_field_id' => Schema::TYPE_INTEGER . '(11) NOT NULL'
         ], $tableOptions);
 
-        $this->addForeignKey('ads_fields_default_value_ads_fields_type_fk', 'ads_fields_default_value', 'ads_field_type_id', 'ads_fields_type', 'id', 'RESTRICT', 'CASCADE');
+        $this->addForeignKey('ads_fields_default_value_ads_fields_fk', 'ads_fields_default_value', 'ads_field_id', 'ads_fields', 'id', 'RESTRICT', 'CASCADE');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function down()
     {
-        $this->dropForeignKey('ads_fields_default_value_ads_fields_type_fk', 'ads_fields_default_value');
+        $this->dropForeignKey('ads_fields_default_value_ads_fields_fk', 'ads_fields_default_value');
 
         $this->dropTable('ads_fields_default_value');
     }
